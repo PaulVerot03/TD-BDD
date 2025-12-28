@@ -3,6 +3,8 @@
 
 #import "classic-evry-report/template/setup/macros.typ": *
 
+// https://github.com/PaulVerot03/classic-evry-report typst remplate 
+
 
 // revision to use for add, rmv and change
 
@@ -125,9 +127,9 @@ J'ai ensuite pu me connecter à la base de données.
   caption: "Visualisation d'une instance SQL Developer",
 )
 \
-Avec les bases de données mises en place et les logiciels d'exploration de base installés, on peut intéroger la base OraclSQL.
-
-
+Avec les bases de données mises en place et les logiciels d'exploration de base installés, on peut intéroger la base OracleSQL.
+\
+Le contenu des TD en relation avec la base de données mise en place pour le projet sont disponnible sur mon GitHub : #link("https://github.com/PaulVerot03/TD-BDD"), ainsi que le code Typst nécessaire pour générer ce PDF.
 
 = Export des données vers MongoDB
 Pour exporter des données vers MongoDB, on a besoin d'un script.
