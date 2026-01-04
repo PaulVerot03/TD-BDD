@@ -26,7 +26,7 @@
     theme: "Bases de Données",
     abstract: "Mise en place d'une machine virtuelle Oracle Linux 10, installation et configuration de bases de données Oracle SQL et MongoDB. Intéraction avec les données et export vers MongoDB",
   ),
-  lang: "fr",
+  lang:"fr"
 
   // clear-double-page: false,
 )
