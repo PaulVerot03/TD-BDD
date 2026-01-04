@@ -1,40 +1,13 @@
 // LTeX: language=fr
-#import "classic-evry-report/lib.typ": appendix, backmatter, chapters, mainmatter, project, smallprint, use-roman-numbering, use-arabic-numbering, use-binary-numbering
+#import "classic-evry-report/lib.typ": appendix, backmatter, chapters, mainmatter, project, smallprint
 
 #import "classic-evry-report/template/setup/macros.typ": *
 
-// https://github.com/PaulVerot03/classic-evry-report typst remplate 
-
-
-// revision to use for add, rmv and change
-
-// it is also possible to apply show rules to the entire project
-// it is more or less a search and replace when applying it to a string.
-// see https://typst.app/docs/reference/styling/#show-rules
-// #show "naive": "naïve"
-// #show "Dijkstra's": smallcaps
-
-// Initialize acronyms / glossary
-// See https://typst.app/universe/package/glossy for additional details.
-
-
-#show: init-glossary.with(
-  (
-    PBL: "Problem Based Learning", // will automatically infer plurality
-    web: (
-      short: "WWW", // @web will show WWW
-      long: "World Wide Web",
-    ),
-    LTS: (
-      short: "LTS",
-      long: "Labelled Transition System",
-      plural: "LTSs", // override plural explicitly
-    ),
-  ),
-  term-links: true,
-) // terms link to the index
+// template pour typst : https://github.com/PaulVerot03/classic-evry-report  
+// commande de compilation : typst compile main.typ RenduPaulVEROT20212888.pdf
 
 #show: project.with(
+  
   meta: (
     project-group: "Master 1 CNS-SR",
     participants: (
@@ -48,17 +21,21 @@
     //field-of-study: "CS",
     project-type: "Semestre 7",
   ),
-
   fr: (
     title: "Rendu de Projet",
     theme: "Bases de Données",
-    abstract: "Mise en place d'une machine virtuelle Oracle Linux 10, installation et configuration de bases de données Oracle SQL et MongoDB, puis interaction avec ces données.",
+    abstract: "Mise en place d'une machine virtuelle Oracle Linux 10, installation et configuration de bases de données Oracle SQL et MongoDB. Intéraction avec les données et export vers MongoDB",
   ),
+  lang: "fr",
 
   // clear-double-page: false,
 )
+
 #let blue(body) = text(fill: rgb("#003b69"), body)
 
+#set par(first-line-indent: 0pt)
+#outline(depth: 2)
+#show: mainmatter.with(skip-double: true) 
 
 = Mise en Place
 J'ai commencé par suivre les instructions du document fourni :
@@ -127,9 +104,15 @@ J'ai ensuite pu me connecter à la base de données.
   caption: "Visualisation d'une instance SQL Developer",
 )
 \
+#figure(
+  image("Media/modeler.png", width: 100%),
+  caption: "Modèle de la base généré par SQLdeveloper"
+)
+\
 Avec les bases de données mises en place et les logiciels d'exploration de base installés, on peut intéroger la base OracleSQL.
 \
-Le contenu des TD en relation avec la base de données mise en place pour le projet sont disponnible sur mon GitHub : #link("https://github.com/PaulVerot03/TD-BDD"), ainsi que le code Typst nécessaire pour générer ce PDF.
+\
+Le contenu des TD en relation avec la base de données mise en place pour le projet sont disponnible sur mon #blue[#link("https://github.com/PaulVerot03/TD-BDD")[GitHub]], ainsi que le code Typst nécessaire pour générer ce PDF.
 
 = Export des données vers MongoDB
 Pour exporter des données vers MongoDB, on a besoin d'un script.
@@ -197,6 +180,7 @@ Document 1:
   ]
 }
 ```
+
 
 #figure(
   image("Media/mongo1.png", width: 100%),
